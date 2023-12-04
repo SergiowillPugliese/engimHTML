@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+  /* Reset */
+  body, html{ background: #000; color:#fff; font-family: 'Intro', sans-serif; font-size: 16px; box-sizing: border-box;margin: 0;padding: 0;}*,*:before,*:after{ box-sizing: border-box; }h1,h2,h3,h4,h5,h6, p, ol, ul{margin: 0 0 1rem 0;padding: 0;}ol,ul{list-style-type: none;}img{height: auto;}h1{font-size: 4rem;} h2{font-size: 3rem;} h3{font-size: 2rem;} h4{font-size: 1rem;} h5{font-size: 0.8rem;} h6{font-size: 0.6rem;}a{text-decoration:none}
+  .video-bg{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  .section{
+    position: relative;
+    z-index : 1;
+    width: 100%;
+    height: 100vh;
+  }
+
+
+  .title{
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    position: fixed;
+    top: 0; left:0;
+    margin-left: 25%;
+    transform: scale(1);
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+    opacity: 0;
+
+  }
+
+  .section.in-page .title{
+    transform: scale(1.2);
+    opacity:1;
+  }
+
+  .panel{
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+    color:#000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  </style>
+
+</head>
+<body>
+
+  <video class="video-bg" src="video.mp4" autoplay muted loop></video>
+  <div class="section watch">
+    <h1 class="title"> Ciao sono la prima sezione </h1>
+  </div>
+  <div class="section watch">
+    <h2 class="title"> Ciao sono la seconda sezione </h2>
+  </div>
+  <div class="section watch">
+    <h2 class="title"> Ciao sono la terza sezione </h2>
+  </div>
+
+  <div class="panel">
+    <h2>Hey, Ciao Mondo!!! </h2>
+  </div>
+
+
+
+
+   <script> 
+
+   // elements
+   var elements_to_watch = document.querySelectorAll('.watch');
+
+   // callback 
+   var callback = function(items){
+     items.forEach((item) => {
+       if(item.isIntersecting){
+         item.target.classList.add("in-page");
+       } else{
+         item.target.classList.remove("in-page");
+       }
+     });
+   }
+
+   // observer
+   var observer = new IntersectionObserver(callback, { threshold: 0.6 } );
+
+   // apply
+   elements_to_watch.forEach((element) => {
+     observer.observe(element); 
+   });
+   
+   
+   
+   </script>
+
+</body>
+</html>

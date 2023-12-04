@@ -1,0 +1,81 @@
+UNITA' DI MISURA CSS
+
+Pixel (px): L'unità di misura più comune. Un pixel corrisponde a un singolo punto su uno schermo.
+Ad esempio, 10px indica un elemento con una larghezza di 10 pixel.
+
+Percentuale (%): Rappresenta una percentuale dell'elemento genitore.
+Se un contenitore ha una larghezza di 200px e imposti un elemento al 50%, avrà una larghezza di 100px.
+
+Em: Relativo alla dimensione del carattere del genitore.
+Ad esempio, se la dimensione del carattere del genitore è 16px e imposti un elemento a 2em, avrà una larghezza di 32px.
+
+Rem: Simile a em, ma basato sulla dimensione del carattere radice del documento anziché sul genitore.
+È spesso preferito per la coerenza.
+
+Viewport Width (vw): Rappresenta una percentuale della larghezza della viewport.
+Ad esempio, 10vw è il 10% della larghezza della viewport.
+
+Viewport Height (vh): Come vw, ma in termini di altezza della viewport.
+
+Viewport Minimum (vmin) e Viewport Maximum (vmax): Rappresentano rispettivamente il minimo e il massimo tra vw e vh.
+Utile per gestire dimensioni responsive in base alla larghezza o altezza più piccola o più grande della viewport.
+
+Centimetri (cm), Millimetri (mm), Pollici (in), Punti (pt) e Picche (pc): Unità di misura fisiche.
+Ad esempio, 2cm corrisponde a due centimetri.
+
+
+
+TUTTI I MODI DI CAMBIARE LE DIMENSIONI AD UN ELEMENTO
+
+1. Utilizzo degli attributi HTML:
+- Puoi impostare direttamente le dimensioni dell'elemento utilizzando gli attributi HTML come `width` e `height`. Ad
+esempio:
+<div style="width: 200px; height: 150px;">Questo è un elemento</div>
+
+2. CSS con le proprietà `width` e `height`:
+- In alternativa, puoi definire le dimensioni tramite CSS nel tuo foglio di stile:
+.mio-elemento {
+width: 300px;
+height: 200px;
+}
+
+3. Utilizzo di unità relative:
+- Puoi usare unità relative come percentuali per adattare le dimensioni all'interno di un contenitore. Ad esempio:
+.mio-elemento {
+width: 50%;
+height: 75%;
+}
+
+4. Proprietà `max-width` e `min-width`:
+- `max-width` limita la larghezza massima dell'elemento, mentre `min-width` ne impone una larghezza minima. Esempio:
+.mio-elemento {
+max-width: 500px; /* larghezza massima di 500px */
+min-width: 100px; /* larghezza minima di 100px */
+}
+
+5. Proprietà `max-height` e `min-height`:
+- `max-height` limita l'altezza massima dell'elemento, mentre `min-height` ne impone un'altezza minima. Esempio:
+.mio-elemento {
+max-height: 300px; /* altezza massima di 300px */
+min-height: 50px; /* altezza minima di 50px */
+}
+
+LE TRASFORMAZIONI:
+
+1. Metodo `transform: scale()`:
+- Questo metodo scala l'elemento in base ai valori forniti. Ad esempio:
+.mio-elemento {
+transform: scale(1.5); /* scala del 150% */
+}
+
+2. Metodo `transform: translate()`:
+- Questo sposta l'elemento lungo l'asse X e/o Y. Esempio:
+.mio-elemento {
+transform: translate(50px, 20px); /* sposta di 50px lungo l'asse X e 20px lungo l'asse Y */
+}
+
+3. Metodo `transform: rotate()`:
+- Ruota l'elemento in gradi specificati:
+.mio-elemento {
+transform: rotate(45deg); /* ruota di 45 gradi */
+}

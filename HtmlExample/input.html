@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempi Tag Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            padding: 0;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Esempi di Tag &lt;input&gt;</h1>
+
+    <h2>1. Input di testo:</h2>
+    <p>Un campo di testo standard per l'inserimento di testo.</p>
+    <input type="text" name="username" placeholder="Inserisci il tuo username">
+    <!-- Attributi utilizzati:
+         - type="text": specifica che è un campo di testo.
+         - name="username": il nome del campo, utile quando si invia il modulo.
+         - placeholder="Inserisci il tuo username": testo temporaneo nel campo di input. -->
+
+    <h2>2. Input password:</h2>
+    <p>Un campo di testo mascherato utilizzato per inserire password.</p>
+    <style>
+        input[type="password"]:invalid {
+            border: 2px solid red;
+        }
+    </style>
+    <input type="password" name="password" placeholder="Inserisci la tua password" required>
+    <!-- Attributi utilizzati:
+         - type="password": maschera l'input per la password.
+         - name="password": il nome del campo, utile quando si invia il modulo.
+         - placeholder="Inserisci la tua password": testo temporaneo nel campo di input. -->
+
+    <h2>3. Casella di controllo (checkbox):</h2>
+    <p>Una casella di controllo per selezionare o deselezionare un'opzione.</p>
+    <input type="checkbox" name="accettatermini" id="accettatermini">
+    <label for="accettatermini">Accetto i termini e le condizioni</label>
+    <!-- Attributi utilizzati:
+         - type="checkbox": crea una casella di controllo.
+         - name="accettatermini": il nome del campo, utile quando si invia il modulo.
+         - id="accettatermini": collega la casella di controllo all'etichetta. -->
+
+    <h2>4. Pulsante di opzione (radio button):</h2>
+    <p>Pulsanti di opzione per selezionare una sola opzione da un gruppo.</p>
+    <input type="radio" name="gender" value="male" id="male">
+    <label for="male">Maschio</label>
+
+    <input type="radio" name="gender" value="female" id="female">
+    <label for="female">Femmina</label>
+    <!-- Attributi utilizzati:
+         - type="radio": crea un pulsante di opzione.
+         - name="gender": raggruppa i pulsanti di opzione.
+         - value="male"/"female": specifica il valore del pulsante di opzione.
+         - id="male"/"female": collega il pulsante di opzione all'etichetta. -->
+
+    <h2>5. Campo di selezione (select):</h2>
+    <p>Un menu a discesa per selezionare un'opzione da un elenco.</p>
+    <select name="country">
+        <option value="italy">Italia</option>
+        <option value="spain">Spagna</option>
+        <option value="france">Francia</option>
+    </select>
+    <!-- Attributi utilizzati:
+         - name="country": il nome del campo, utile quando si invia il modulo.
+         - <option>: definisce le opzioni nel menu. -->
+
+    <h2>6. Input nascosto:</h2>
+    <input type="hidden" name="token" value="abc123">
+
+    <h2>
+        Esempio di un form di registrazione:
+    </h2>
+
+    <form id="registrationForm">
+        <h2>Registrazione</h2>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" name="cognome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="4" oninput="checkPasswordLength()">
+
+        <button type="submit" value="submit" disabled>Registrati</button>
+    </form>
+
+    <script>
+        function checkPasswordLength() {
+            const passwordInput = document.getElementById('password');
+            const submitButton = document.querySelector('button[type="submit"]');
+            submitButton.disabled = passwordInput.value.length < 4;
+        }
+
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevents the default form submission
+            console.clear(); // Clears the console
+
+            // Logging the form data to the console
+            console.log('Dati inseriti:');
+            console.log('Nome:', document.getElementById('nome').value);
+            console.log('Cognome:', document.getElementById('cognome').value);
+            console.log('Email:', document.getElementById('email').value);
+            console.log('Password:', document.getElementById('password').value);
+        });
+    </script>
+
+</body>
+
+</html>
