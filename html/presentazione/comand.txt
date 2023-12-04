@@ -1,0 +1,9 @@
+ssh-keygen -o -t rsa -C "pugliese.sergio1987@hotmail.it"
+ssh-add ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub
+
+copia token
+
+
+~
+
