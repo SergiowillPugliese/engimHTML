@@ -1,6 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+* {
+    font-family: 'Nova Square', sans-serif;
+}
+
 body {
+    margin: 0;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+header h1 {
+    color: #eee;
+    text-align: center;
+    font-size: 72px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.left-wrapper {
     background-image: url('../assets/svg/Visiwig-Circle-Quarters.svg');
     background-repeat: no-repeat;
-    background-size: contain;
-    height: 100vh;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.right-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(238 238 238 / 80%);
+    position: relative;
+}
+
+.right-wrapper img {
+    z-index: -1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.right-wrapper .presentation {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, 50%);
 }
