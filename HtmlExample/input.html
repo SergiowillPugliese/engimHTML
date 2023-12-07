@@ -129,25 +129,17 @@
         <button type="submit" value="submit" disabled>Registrati</button>
     </form>
 
-    <script>
-        function checkPasswordLength() {
-            const passwordInput = document.getElementById('password');
-            const submitButton = document.querySelector('button[type="submit"]');
-            submitButton.disabled = passwordInput.value.length < 4;
-        }
-
-        document.getElementById('registrationForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevents the default form submission
-            console.clear(); // Clears the console
-
-            // Logging the form data to the console
-            console.log('Dati inseriti:');
-            console.log('Nome:', document.getElementById('nome').value);
-            console.log('Cognome:', document.getElementById('cognome').value);
-            console.log('Email:', document.getElementById('email').value);
-            console.log('Password:', document.getElementById('password').value);
-        });
-    </script>
+    <!-- 
+        form: Rappresenta un modulo HTML per la raccolta di input dall'utente.
+        label: Etichetta associata a un campo di input, migliorando l'accessibilità.
+        input: Campo di input per la raccolta di dati, con vari tipi come testo, email e password.
+        id: Identificatore univoco per ogni elemento, utile per l'accesso tramite JavaScript o per il collegamento da etichette.
+        name: Nome associato all'elemento quando invii il modulo, utile per l'identificazione dei dati lato server.
+        required: Attributo che indica che il campo è obbligatorio e deve essere compilato.
+        minlength: Attributo che specifica la lunghezza minima richiesta per un campo di input.
+        oninput: Evento che si verifica quando l'utente inserisce qualcosa nel campo di input; in questo caso, viene chiamata la funzione checkPasswordLength().
+        button: Pulsante per l'invio del modulo con il valore "submit", inizialmente disabilitato.
+     -->
 
 </body>
 
