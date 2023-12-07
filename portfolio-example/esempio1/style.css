@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 * {
     font-family: 'Nova Square', sans-serif;
@@ -57,3 +58,11 @@ header h1 {
     left: 20%;
     transform: translate(-50%, 50%);
 }
+=======
+/* body {
+    background-image: url('../assets/svg/Visiwig-Circle-Quarters.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+} */
+>>>>>>> Stashed changes
